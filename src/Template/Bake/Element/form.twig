@@ -1,0 +1,97 @@
+{#
+/**
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @since         2.0.0
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ */
+#}
+{% set fields = Bake.filterFields(fields, schema, modelObject) %}
+
+<?php $this->start('q-layout-drawer'); ?>
+    <q-layout-drawer
+      v-model="drawerState"
+      :content-class="$q.theme === 'mat' ? 'q-color-quinary' : null"
+    >
+        <q-list no-border link inset-delimiter>
+            <q-list-header><?= __('Actions') ?></q-list-header>
+
+            {% if strpos(action, 'add') is same as(false) %}
+                    <q-item><?= $this->QuasarForm->postLink(
+                            __('Delete'),
+                            ['action' => 'delete', ${{ singularVar }}->{{ primaryKey[0] }}],
+                            ['confirm' => __('Are you sure you want to delete # {0}?', ${{ singularVar }}->{{ primaryKey[0] }})]
+                        )
+                    ?></q-item>
+            {% endif %}
+                    <q-item><?= $this->Html->link(__('List {{ pluralHumanName }}'), ['action' => 'index']) ?></q-item>
+                    {{- "\n" }}
+            {%- set done = [] %}
+            {% for type, data in associations %}
+                {%- for alias, details in data %}
+                    {%- if details.controller is not same as(_view.name) and details.controller not in done %}
+                    <q-item><?= $this->Html->link(__('List {{ alias|underscore|humanize }}'), ['controller' => '{{ details.controller }}', 'action' => 'index']) ?></q-item>
+                    <q-item><?= $this->Html->link(__('New {{ alias|singularize|underscore|humanize }}'), ['controller' => '{{ details.controller }}', 'action' => 'add']) ?></q-item>
+                    {{- "\n" }}
+                    {%- set done = done|merge([details.controller]) %}
+                    {%- endif %}
+                {%- endfor %}
+            {% endfor %}
+        </q-list>
+    </q-layout-drawer>
+<?php $this->end() ?>
+
+<?php $this->Html->scriptStart(['block' => 'vue-template', 'type' => "text/x-template", 'id' => "content"]); ?>
+    <div class="{{ pluralVar }} index content">
+        <?= $this->QuasarForm->create(${{ singularVar }}, ['id' => 'quasarform']) ?>
+        <fieldset>
+            <legend><?= __('{{ action|humanize }} {{ singularHumanName }}') ?></legend>
+            <?php
+    {% for field in fields if field not in primaryKey %}
+        {%- if keyFields[field] %}
+            {%- set fieldData = Bake.columnData(field, schema) %}
+            {%- if fieldData.null %}
+                echo $this->QuasarForm->control('{{ field }}', ['options' => ${{ keyFields[field] }}, 'empty' => true]);
+                {{- "\n" }}
+            {%- else %}
+                echo $this->QuasarForm->control('{{ field }}', ['options' => ${{ keyFields[field] }}]);
+                {{- "\n" }}
+            {%- endif %}
+        {%- elseif field not in ['created', 'modified', 'updated'] %}
+            {%- set fieldData = Bake.columnData(field, schema) %}
+            {%- if fieldData.type in ['date', 'datetime', 'time'] and fieldData.null %}
+                echo $this->QuasarForm->control('{{ field }}', ['empty' => true]);
+                {{- "\n" }}
+            {%- else %}
+                echo $this->QuasarForm->control('{{ field }}');
+        {{- "\n" }}
+            {%- endif %}
+        {%- endif %}
+    {%- endfor %}
+
+    {%- if associations.BelongsToMany %}
+        {%- for assocName, assocData in associations.BelongsToMany %}
+                echo $this->QuasarForm->control('{{ assocData.property }}._ids', ['options' => ${{ assocData.variable }}]);
+        {{- "\n" }}
+        {%- endfor %}
+    {% endif %}
+            ?>
+        </fieldset>
+        <?= $this->QuasarForm->button(__('Submit')) ?>
+        <?= $this->QuasarForm->end() ?>
+    </div>
+<?php $this->Html->scriptEnd(); ?>
+
+<?php $this->Html->scriptStart(['block' => 'vue-component']); ?>
+    Vue.component('quasar-page', {
+      template: '#content'
+    })
+<?php $this->Html->scriptEnd(); ?>
+

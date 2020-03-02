@@ -1,0 +1,247 @@
+.xs-hide {
+  display: none;
+}
+@media only screen and (min-width: 48em) {
+  .xs-hide {
+    display: block;
+  }
+  .sm-hide {
+    display: none;
+  }
+}
+@media only screen and (min-width: 64em) {
+  .sm-hide {
+    display: block;
+  }
+  .md-hide {
+    display: none;
+  }
+}
+@media only screen and (min-width: 75em) {
+  .md-hide {
+    display: block;
+  }
+  .lg-hide {
+    display: none;
+  }
+}
+.q-layout-header.options {
+  box-shadow: none;
+  border-bottom: 1px solid $q-color-primary;
+  padding: 0 1rem;
+}
+h1 {
+  color: $q-color-primary;
+  font-weight: bold;
+  font-size: 2.2rem;
+  font-family: 'Roboto Condensed', sans-serif;
+  margin: 0;
+}
+h2 {
+  padding: 0;
+  margin: 0;
+  color: $q-color-accent;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  line-height: 2rem;
+}
+h2:not(:first-of-type) {
+  margin-top: 2rem;
+}
+h2 span {
+  font-size: 1rem;
+  font-weight: normal;
+}
+h3 {
+  padding: 0;
+  margin: 0;
+  color: $q-color-primary;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+h4 {
+  padding: 0;
+  margin: 1rem 0 1rem 0;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1rem;
+  line-height: 1rem;
+  letter-spacing: 1.2px;
+  color: $q-color-secondary;
+  opacity: 0.7;
+}
+.box.borderless {
+  padding: 1rem 2rem;
+}
+.box.border {
+  background: $q-color-tertiary;
+  padding: 1rem;
+  margin: 1rem 0 0 0;
+}
+.box.border .inner {
+  padding: 1rem;
+  background: #fff;
+  border-radius: $borderradius;
+  border: 1px solid transparent;
+}
+.q-btn-group {
+  margin: 0.5rem 0 0 0;
+  border-radius: $borderradius;
+}
+.q-btn-group .q-btn {
+  margin: 0;
+  border-radius: $borderradius;
+}
+.q-btn-group .q-btn:not(:first-of-type) {
+  border-left: 1px solid #fff;
+}
+#signature-pad {
+  border: 1rem solid $q-color-tertiary;
+  border-radius: $borderradius;
+}
+.spacer {
+  margin-bottom: 2rem;
+}
+.row.tall {
+  margin-top: 0.5rem;
+}
+.q-alert {
+  border-radius: $borderradius;
+}
+.q-alert>.q-alert-side .q-icon {
+  font-size: 2.5rem;
+}
+.q-alert>.q-btn .q-icon {
+  font-size: 2rem;
+  min-height: 2rem;
+}
+.q-checkbox {
+  margin-right: 1rem;
+}
+.sub {
+  position: relative;
+}
+.sub:first-of-type {
+  margin: 0.5rem 0 0 0;
+}
+.sub .q-icon {
+  font-size: 2rem;
+  font-weight: 300;
+  color: #d3d3d3;
+}
+.datetime >.q-field__inner >.q-field__control:after {
+  transform: scale3d(0, 1, 1);
+}
+.datetime >.q-field__inner >.q-field__control:before {
+  border: 0;
+}
+.datetime.q-field--auto-height.q-field--labeled .q-field__control-container {
+  padding-top: 0;
+}
+.datetime .q-field__label {
+  padding-bottom: 50px;
+}
+.q-field--labeled .q-field__native,
+.q-field--labeled .q-field__prefix,
+.q-field--labeled .q-field__suffix {
+  line-height: 24px;
+  padding-top: 24px;
+  padding-bottom: 0px;
+}
+.q-field {
+  flex: auto;
+}
+.q-field.thin .q-field__control-container {
+  padding-top: 16px;
+}
+.q-field__control .q-option-group .q-radio__inner + div.q-radio__label {
+  color: #000;
+}
+.q-field__control .q-option-group .q-radio__inner--active + div.q-radio__label {
+  color: $q-color-primary;
+}
+.q-field.small .q-field-label-inner {
+  font-size: 0.75rem;
+}
+.q-field.add {
+  position: relative;
+}
+.q-field.add .q-icon.inset {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  font-size: 1.3rem;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 0;
+  border: 1px solid transparent;
+}
+.q-field.add .q-icon.inset:hover {
+  border: 1px solid #d3d3d3;
+}
+.adder {
+  position: relative;
+}
+.adder .add .q-icon {
+  font-size: 1.5rem;
+  color: $q-color-primary;
+  text-align: right;
+  font-weight: normal;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.adder .add .q-icon:hover {
+  cursor: pointer;
+}
+.q-stepper {
+  box-shadow: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.q-stepper .q-chip {
+  margin: 0 1rem 0.5rem 0;
+}
+.q-stepper .q-stepper-nav,
+.q-stepper .q-stepper-tab {
+  flex: 1;
+}
+.q-stepper .q-stepper-nav.step-active .q-stepper-dot,
+.q-stepper .q-stepper-tab.step-active .q-stepper-dot {
+  background: $q-color-primary;
+}
+.q-stepper .q-stepper-nav.step-active .q-stepper-dot span,
+.q-stepper .q-stepper-tab.step-active .q-stepper-dot span {
+  color: #fff;
+}
+.q-stepper .q-stepper-nav:not(.step-active) .q-stepper-dot,
+.q-stepper .q-stepper-tab:not(.step-active) .q-stepper-dot {
+  color: $q-color-primary;
+  background: #fff;
+}
+.q-stepper .q-stepper-dot {
+  border: 2px solid $q-color-primary;
+}
+.q-stepper .q-stepper-dot span {
+  color: $q-color-primary;
+}
+.q-stepper-horizontal > .q-stepper-step > .q-stepper-step-content > .q-stepper-step-inner {
+  padding: 0;
+}
+.q-stepper-horizontal > .q-stepper-header .q-stepper-line:before,
+.q-stepper-horizontal > .q-stepper-header .q-stepper-line:after {
+  position: absolute;
+  top: 50%;
+  height: 2px;
+  width: 100vw;
+  background: $q-color-primary;
+}
+.q-select.sub {
+  margin-left: 0px;
+}
+.q-if-label-spacer {
+  white-space: normal;
+}

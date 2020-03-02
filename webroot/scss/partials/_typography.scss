@@ -1,0 +1,59 @@
+h1 {}
+h2 {
+  padding: 0;
+  margin: 0;
+  color: rgba(210,218,235,0.8);
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  line-height: 2rem;
+}
+
+table {
+  thead {
+    th {
+      color: white;
+    }
+  }
+  th {
+    color: $q-color-secondary;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: bold;
+    a {
+      color: white;
+    }
+  }
+  td {
+    text-align: left;
+    &.actions{
+      a {
+        text-decoration: none;
+        .q-icon {
+          background: $q-color-primary;
+          color: #fff;
+          // box-shadow: 1px 1px 4px 0px #979797;
+          padding: 6px;
+          border: 0px transparent;
+          border-radius: 5px;
+          margin-bottom: 2px;
+        }
+        &:hover {
+          text-decoration: none;   
+        }
+      }
+    }
+  }
+}
+
+.error-message {
+
+    display: block;
+    padding: 0.375rem 0.5625rem 0.5625rem;
+    margin-top: -1px;
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    font-weight: normal;
+    font-style: italic;
+    color: $q-color-negative;
+}

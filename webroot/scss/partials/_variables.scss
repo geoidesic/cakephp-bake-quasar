@@ -1,0 +1,61 @@
+
+//-- Media Breakpoints --//
+  $breakpoint-xs: 767px;
+  $breakpoint-md: 991px;
+  $breakpoint-lg: 1200px;
+
+//-- Text Sizing --//
+  $font-size-base:          14px !default;
+  $line-height-base: 1.428571429 !default;
+  $line-height-computed: floor(($font-size-base * $line-height-base)) !default;
+
+  
+
+//-- Colours -- //
+  // $color-primary:
+  // $color-secondary:
+  // $color-tertiary:
+  // $color-darkgrey:
+  // $color-grey:
+  // $color-lightgrey:
+
+  :root {
+    --q-color-primary: #4267ae;
+    --q-color-secondary: #7a5e8e;
+    --q-color-tertiary: #ECF0F7;
+    --q-color-quaternary: #26A69A;
+    --q-color-quinary: #dcecf9;
+    --q-color-positive: #785e8e;
+    --q-color-negative: #C10015;
+    --q-color-negative-l: #ec8b8b;
+    --q-color-info: #31CCEC;
+    --q-color-warning: #F2C037;
+    --q-color-warning-l: #f8dd93;
+    --q-color-light: #bdbdbd;
+    --q-color-light-d: #aaa;
+    --q-color-faded: #777;
+    --q-color-dark: #424242;
+    --q-color-accent: #dcecf9;
+  }
+
+
+  $q-color-primary:     var(--q-color-primary);
+  $q-color-secondary:   var(--q-color-secondary);
+  $q-color-tertiary:    var(--q-color-tertiary);
+  $q-color-quaternary:  var(--q-color-quaternary);
+  $q-color-quinary:     var(--q-color-quinary);
+  $q-color-positive:    var(--q-color-positive);
+  $q-color-negative:    var(--q-color-negative);
+  $q-color-negative:    var(--q-color-negative-l);
+  $q-color-info:        var(--q-color-info);
+  $q-color-warning:     var(--q-color-warning);
+  $q-color-warning:     var(--q-color-warning-l);
+  $q-color-light:       var(--q-color-light);
+  $q-color-light:       var(--q-color-light-d);
+  $q-color-faded:       var(--q-color-faded);
+  $q-color-dark:        var(--q-color-dark);
+  $q-color-accent:      var(--q-color-accent);
+
+//-- Borders --//
+$border-radius: 5px;
+$borderradius: 8px;

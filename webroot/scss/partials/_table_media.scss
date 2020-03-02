@@ -1,0 +1,16 @@
+
+/*
+@deprecated: quasar has a better solution for this
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+
+  .mobile-table-wrapper {
+    overflow-x: auto;
+    table td.actions a .q-icon{
+      font-size: 1.3rem;
+      // padding: 18px;
+    }
+  }
+

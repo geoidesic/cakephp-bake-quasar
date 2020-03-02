@@ -1,0 +1,27 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 0px transparent;
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px 0px #979797;
+  }
+
+tr {
+  border-bottom: 1px solid $q-color-tertiary;
+}
+
+// th[scope="col"] {
+//   background: $q-color-secondary;
+//   color: #fff;
+//   &:first-of-type {
+//     border-top-left-radius: $border-radius;
+//   }
+//   &:last-of-type {
+//     border-top-right-radius: $border-radius;
+//   }
+// }
+
+td, th {
+  padding: 10px;
+  }
+
