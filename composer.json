@@ -3,7 +3,7 @@
     "description": "A bake plugin for CakePHP v3.8.x",
     "type": "cakephp-plugin",
     "license": "MIT",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "require": {
         "cakephp/cakephp": "^3.5"
     },
