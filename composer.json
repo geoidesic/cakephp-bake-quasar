@@ -1,11 +1,11 @@
 {
     "name": "geoidesic/cakphp-bake-quasar",
-    "description": "A bake plugin for CakePHP v3.8.x",
+    "description": "A bake plugin for CakePHP",
     "type": "cakephp-plugin",
     "license": "MIT",
     "authors": [
         {
-            "name": "Arc Digital",
+            "name": "Noel da Costa",
             "homepage": "https://www.arcdigital.uk",
             "role": "Author"
         }
@@ -15,10 +15,9 @@
         "Quasar",
         "Bake"
     ],
-    "version": "0.0.2",
     "support": {
-        "source": "https://github.com/sprintcube/cakephp-elastic-email",
-        "issues": "https://github.com/sprintcube/cakephp-elastic-email/issues"
+        "source": "https://github.com/geoidesic/cakphp-bake-quasar",
+        "issues": "https://github.com/geoidesic/cakphp-bake-quasar/issues"
     },
     "require": {
         "php": ">=5.6.0",
