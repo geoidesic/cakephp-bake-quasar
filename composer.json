@@ -3,12 +3,29 @@
     "description": "A bake plugin for CakePHP v3.8.x",
     "type": "cakephp-plugin",
     "license": "MIT",
-    "version": "0.0.1",
+    "authors": [
+        {
+            "name": "Arc Digital",
+            "homepage": "https://www.arcdigital.uk",
+            "role": "Author"
+        }
+    ],
+    "keywords": [
+        "CakePHP",
+        "Quasar",
+        "Bake"
+    ],
+    "version": "0.0.2",
+    "support": {
+        "source": "https://github.com/sprintcube/cakephp-elastic-email",
+        "issues": "https://github.com/sprintcube/cakephp-elastic-email/issues"
+    },
     "require": {
-        "cakephp/cakephp": "^3.5"
+        "php": ">=5.6.0",
+        "cakephp/cakephp": "^3.8"
     },
     "require-dev": {
-        "phpunit/phpunit": "^5.7.14|^6.0"
+        "phpunit/phpunit": "^5.7|^6.0"
     },
     "autoload": {
         "psr-4": {
@@ -17,7 +34,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "cakphp-bake-quasar\\Test\\": "tests/",
+            "QuasarAdmin\\Test\\": "tests/",
             "Cake\\Test\\": "vendor/cakephp/cakephp/tests/"
         }
     }
