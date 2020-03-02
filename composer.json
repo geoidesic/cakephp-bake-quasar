@@ -1,5 +1,5 @@
 {
-    "name": "cakphp-bake-quasar",
+    "name": "geoidesic/cakphp-bake-quasar",
     "description": "A bake plugin for CakePHP v3.8.x",
     "type": "cakephp-plugin",
     "license": "MIT",
@@ -22,3 +22,5 @@
         }
     }
 }
+
+
